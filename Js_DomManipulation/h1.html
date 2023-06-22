@@ -1,0 +1,87 @@
+<!-- <!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    .box{
+        width: 100px;
+        height: 100px;
+        background-color: blue;
+        border: 2px solid green;
+    }
+</style>
+<body>
+    <div class="container">
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+    <div class="box"></div>
+</div>
+
+
+
+    <script>
+  let box1=document.querySelector(".container")
+  box2=box1.querySelectorAll(".box")
+   box2.forEach( (el)=>{
+    el.style.backgroundColor="red";
+   })
+    </script>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<style>
+    span {
+  display: block;
+  margin-bottom: 5px;
+}
+
+
+</style>
+<body>
+    <div>
+        <h6>Page Title</h6>
+        <div id="parent">
+          <span>Love is Kind.</span>
+          <h3>Moulidhar</h3>
+          <span>
+            <span>Love is Patient.</span>
+            <h2>Mihir</h2>
+            <p>Himani</p>
+          </span>
+          <span>
+            <span>Love is Selfless.</span>
+            <p>Archies Singh</p>
+          </span>
+        </div>
+      </div>
+
+
+
+      <script>
+        let parent=document.querySelector("#parent");
+        let children=parent.querySelectorAll("span > h2  ");
+        children.forEach(element => {
+            element.style.backgroundColor="green"
+        });
+       
+
+      </script>
+      
+</body>
+</html>

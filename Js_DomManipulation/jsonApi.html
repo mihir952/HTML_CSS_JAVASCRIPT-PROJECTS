@@ -1,0 +1,119 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Fetching through Api </title>
+</head>
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<style>
+ /* .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+ }  */
+ body{
+    background-color: gray;
+ }
+ .container{
+    display: grid;
+    /* place-items: center; */
+    margin: 5px;
+    border: 1px;
+    border-radius: 7px;
+ }
+ th{
+    /* border: 0.5px solid black; */
+    padding: 7px;
+   row-gap: 10px;
+   border-top: none;
+   border-right: none;
+ }
+ td{
+    padding: 15px;
+ }
+ tr:nth-child(even){
+    background-color: rgb(120, 156, 156);
+ }
+ tr:nth-child(odd){
+    background-color: rgb(67, 88, 88);
+ }
+ tr:hover{
+    background-color: rgb(152, 160, 157);
+ }
+ table{
+    background-color: black;
+ }
+</style>
+<body>
+    <h1>Welcome to Valtech!!</h1>
+    <div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Email</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Avatar</th>
+            </tr>
+        </thead>
+        <tbody id="tdata">
+        </tbody>
+    </table>
+
+</div>
+
+    <script>
+        var data1;
+        async function getdata(){
+            
+            const api="https://reqres.in/api/users?page=2";
+            try{
+                const response=await axios.get(api)
+                    //  console.log(response.data.data)
+                     data1=response.data.data;
+                     data1.forEach(element => {
+                    const tabledata=document.getElementById('tdata');
+                    const row=document.createElement("tr");
+                    const id=document.createElement("td");
+                    const email=document.createElement("td");
+                    const firstname=document.createElement("td");
+                    const lastname=document.createElement("td");
+                    const avatar=document.createElement("td");
+
+                    id.textContent=element.id;
+                    email.textContent=element.email;
+                    firstname.textContent=element.first_name;
+                    lastname.textContent=element.last_name;
+                    avatar.innerHTML= `<img src=${element.avatar} alt="Girl in a jacket" width="100" height="100">`;
+
+                    
+
+                    row.appendChild(id);
+                    row.appendChild(email);
+                    row.appendChild(firstname);
+                    row.appendChild(lastname);
+                    row.appendChild(avatar);
+
+
+                    tabledata.appendChild(row)
+                   });
+                
+            } catch(error)
+            {
+                console.error(error)
+            }
+            };
+            getdata()
+          
+
+
+
+            
+           
+    </script>
+</body>
+</html>
