@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Data Fetching through Api </title>
+</head>
+
+<script src="https://cdn.jsdelivr.net/npm/axios/dist/axios.min.js"></script>
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.7.0/jquery.min.js"></script>
+<style>
+ /* .container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+
+ }  */
+ body{
+    background-color: gray;
+ }
+ .container{
+    display: grid;
+    /* place-items: center; */
+    margin: 5px;
+    border: 1px;
+    border-radius: 7px;
+ }
+ th{
+    /* border: 0.5px solid black; */
+    padding: 7px;
+   row-gap: 10px;
+   border-top: none;
+   border-right: none;
+ }
+ td{
+    padding: 15px;
+ }
+ tr:nth-child(even){
+    background-color: rgb(120, 156, 156);
+ }
+ tr:nth-child(odd){
+    background-color: rgb(67, 88, 88);
+ }
+ tr:hover{
+    background-color: rgb(152, 160, 157);
+ }
+ table{
+    background-color: black;
+ }
+</style>
+<body>
+    <h1>Welcome to Valtech!!</h1>
+    <div class="container">
+    <table>
+        <thead>
+            <tr>
+                <th>id</th>
+                <th>Email</th>
+                <th>First Name</th>
+                <th>Last Name</th>
+                <th>Avatar</th>
+            </tr>
+        </thead>
+        <tbody id="tdata">
+        </tbody>
+    </table>
+
+</div>
+
+    <script>
+        $(document).ready(function(){
+            axios.get("https://reqres.in/api/users?page=2").then((response)=>{
+                response.data.data.forEach(element => {
+                    $("#tdata").append(`
+                    <tr><td>${element.id}</td>
+                        <td>${element.email}</td>
+                        <td>${element.first_name}</td>
+                        <td>${element.last_name}</td>
+                        <td><img src=${element.avatar}></td>
+                        </tr>                       
+                        `)
+                });
+            }).catch((error)=>{
+                console.error(error)
+
+            })
+            
+        })
+       
+
+
+            
+           
+    </script>
+</body>
+</html>
