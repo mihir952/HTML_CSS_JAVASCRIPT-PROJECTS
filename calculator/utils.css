@@ -1,0 +1,27 @@
+.text-center{
+    text-align: center;
+}
+.bg-red{
+    /* background-color: rgb(153, 146, 146); */
+}
+.mg-auto{
+    margin: auto;
+}
+.flex {
+  display: flex;
+}
+
+.flex-col{
+   flex-direction: column;
+}
+
+.item-center{
+    align-items: center;
+}
+.input{
+    padding: 10px 55px;
+    border-radius: 5px;
+    border: 2px solid black;
+    font-size: 15px;
+    background-color: azure;
+}

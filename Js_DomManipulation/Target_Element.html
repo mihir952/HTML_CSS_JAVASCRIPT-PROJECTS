@@ -1,0 +1,47 @@
+<!-- <!DOCTYPE html>
+<html>
+<body onclick="myFunction(event)" style="border:1px solid black;Padding:8px">
+<h1>HTML DOM Events</h1>
+<h2>The currentTarget Property</h2>
+
+<p>Click on any elements in this document to find out which element triggered the onclick event.</p>
+
+<p>The target property does not return the element that was clicked on, but the element which triggered the event.</p>
+
+<p id="demo"></p>
+
+<script>
+function myFunction(event) { 
+  let element = event.currentTarget;
+  document.getElementById("demo").innerHTML = element;
+}
+</script>
+
+</body>
+</html> -->
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Event Target Element</title>
+</head>
+<body onclick="target(event)">
+    <h1>HTML dom element</h1>
+    <p>Click on button to get button tag name</p>
+    <P>Click on element in this document</P>
+    <button>This is a button</button>
+    <p id="demo"></p>
+
+
+    <script>
+        function target(event){
+            let ele=event.target.nodeName;
+            document.getElementById("demo").innerHTML=ele;
+        }
+    </script>
+</body>
+</html>

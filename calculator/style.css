@@ -1,0 +1,13 @@
+button{
+    padding: 20px;
+    margin: 0px 5px;
+    border: 2px solid black;
+    cursor: pointer;
+    border-radius: 3px;
+    background-color: rgb(114, 165, 209);
+    font-size: 15px;
+    width: 66px;
+}
+.row{
+    margin: 10px ;
+}
