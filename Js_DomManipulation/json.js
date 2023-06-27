@@ -54,35 +54,49 @@
         }
     }
 ]
-const tablebody=document.getElementById("tdata");
-employees.forEach((employee)=>{
-    const row=document.createElement("tr");
-    const name=document.createElement("td");
-    const title=document.createElement("td");
-    const age=document.createElement("td");
-    const phone=document.createElement("td");
-    const email=document.createElement("td");
+// const tablebody=document.getElementById("tdata");
+// employees.forEach((employee)=>{
+//     const row=document.createElement("tr");
+//     const name=document.createElement("td");
+//     const title=document.createElement("td");
+//     const age=document.createElement("td");
+//     const phone=document.createElement("td");
+//     const email=document.createElement("td");
 
 
-    name.innerHTML=employee.name;
-    title.textContent=employee.info.title;
-    age.textContent=employee.info.age;
-    phone.textContent=employee.info.phone;
-    email.textContent=employee.info.email;
+//     name.innerHTML=employee.name;
+//     title.textContent=employee.info.title;
+//     age.textContent=employee.info.age;
+//     phone.textContent=employee.info.phone;
+//     email.textContent=employee.info.email;
    
-    row.appendChild(name);
-    row.appendChild(title);
-    row.appendChild(age);
-    row.appendChild(phone);
-    row.appendChild(email);
+//     row.appendChild(name);
+//     row.appendChild(title);
+//     row.appendChild(age);
+//     row.appendChild(phone);
+//     row.appendChild(email);
     
 
-    tablebody.appendChild(row);
+//     tablebody.appendChild(row);
 
 
  
 
-});
+// });
+$(document).ready(function(){
+    employees.forEach(employee=>{
+        $('#tdata').append(`
+        <tr><td>${employee.name}</td>
+            <td>${employee.info.title}</td>
+            <td>${employee.info.phone}</td>
+            <td>${employee.info.email}</td>
+            </tr>
+        `)
+    })
+})
+employees.forEach(element=>{
+    console.log(element.info.email)
 
+})
 
 
