@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Grid and flex Box</title>
+</head>
+<style>
+    /* .container{
+        display: flex;
+        justify-content: center;
+        
+    }
+    .box1{
+        display: flex;
+        width: 200px;
+        height: 200px;
+        background-color: darkgray;
+        border: 2px solid rgb(7, 7, 7);
+        border-radius: 5px;
+        margin: 10px 20px;
+        align-items: center;
+        justify-content: center;
+        
+    } */
+
+    .container{
+        display: grid;
+        background-color: blueviolet;
+        grid-template-rows: 300px 300px 300px;
+        grid-template-columns: 300px 300px 300px;
+       
+    }
+    .box1{
+        display: grid;
+        width: 200px;
+        height: 200px;
+        background-color: darkgray;
+        border: 2px solid rgb(7, 7, 7);
+        border-radius: 5px;
+        margin: 10px 20px;
+        align-items: center;
+        justify-content: center;
+    }
+    .box2{
+        grid-column-start: 1;
+        grid-column-end: 3;
+        background-color: black;
+    }
+</style>
+<body>
+    <div class="container">
+        <div class="box1">Mihir</div>
+        <div class="box2">Kumar</div>
+        <div class="box1">Archies</div>
+        <div class="box1">Singh</div>
+    </div>
+</body>
+</html>
